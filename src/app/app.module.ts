@@ -8,7 +8,7 @@ import { TraditionComponent } from './tradition/tradition.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TraditionComponent
+    TraditionComponent,
   ],
   imports: [
     BrowserModule,

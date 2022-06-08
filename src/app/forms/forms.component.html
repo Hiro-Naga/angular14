@@ -1,1 +1,8 @@
 <p>forms works!</p>
+<form (ngSubmit)="onSubmit()">
+  <label>name</label>
+  <input formControlName="name">
+  <label>number</label>
+  <input formControlName="number">
+  <button>reset</button>
+</form>
