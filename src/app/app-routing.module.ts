@@ -5,11 +5,11 @@ import { StandaloneComponent } from './standalone/standalone.component';
 import { TraditionComponent } from './tradition/tradition.component';
 
 const routes: Routes = [{
-  path: '',
-  redirectTo: '/tradition',
+  path: 'tradition',
+  redirectTo: '',
   pathMatch: 'full'
 }, {
-  path: 'tradition',
+  path: '',
   component: TraditionComponent,
   title: 'いつもの',
 }, {

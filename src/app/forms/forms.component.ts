@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
-interface formsParam {
-  specified: FormControl<number>;
-}
 @Component({
   selector: 'app-forms',
   standalone: true,
@@ -21,12 +18,12 @@ export class FormsComponent implements OnInit {
 
   sampleForm = new FormGroup({
     name: new FormControl('name'),
-    number: new FormControl(123),
-    required: new FormControl('required', { nonNullable: true }),
+    number: new FormControl(123, Validators.required),
+    required: new FormControl('nonNullable', { nonNullable: true }),
   });
 
-  sampleForm2 = new FormGroup<formsParam>({
-    specified: new FormControl(1, { nonNullable: true }),
+  sampleForm2 = new FormGroup({
+    specified: new FormControl<number>(1, { nonNullable: true }),
   });
 
   constructor(
@@ -34,7 +31,7 @@ export class FormsComponent implements OnInit {
   ) { }
 
   sampleForm3 = this.fb.nonNullable.group({
-    name: '',
+    name: ['', Validators.required],
     number: 0,
   });
   
@@ -42,7 +39,11 @@ export class FormsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.sampleForm.getRawValue().number);
+    if (this.sampleForm.status !== 'VALID') {
+      console.log('error');
+    } else {
+      console.log(this.sampleForm.getRawValue().number);
+      console.log(this.sampleForm.getRawValue().required === null, this.sampleForm.getRawValue().required);
+    }
   }
-
 }
