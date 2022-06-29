@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsComponent } from './forms/forms.component';
 import { StandaloneComponent } from './standalone/standalone.component';
 import { TraditionComponent } from './tradition/tradition.component';
 
