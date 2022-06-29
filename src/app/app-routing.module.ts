@@ -6,8 +6,8 @@ import { TraditionComponent } from './tradition/tradition.component';
 
 const routes: Routes = [{
   path: '',
-  component: TraditionComponent,
-  title: 'tradition',
+  redirectTo: '/tradition',
+  pathMatch: 'full'
 }, {
   path: 'tradition',
   component: TraditionComponent,
@@ -16,10 +16,6 @@ const routes: Routes = [{
   path: 'standalone',
   component: StandaloneComponent,
   title: 'v14から',
-}, {
-  path: 'forms',
-  component:FormsComponent,
-  title: 'カスタムフォーム',
 }, {
   path: 'lazy',
   loadComponent: () => import('./lazy/lazy.component').then(mod => mod.LazyComponent),

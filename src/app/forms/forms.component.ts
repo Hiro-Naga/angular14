@@ -42,7 +42,7 @@ export class FormsComponent implements OnInit {
   }
 
   onSubmit() {
-    this.sampleForm.reset();
+    console.log(this.sampleForm.getRawValue().number);
   }
 
 }
