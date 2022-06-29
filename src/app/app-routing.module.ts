@@ -4,6 +4,10 @@ import { StandaloneComponent } from './standalone/standalone.component';
 import { TraditionComponent } from './tradition/tradition.component';
 
 const routes: Routes = [{
+  path: '',
+  component: TraditionComponent,
+  title: 'tradition',
+}, {
   path: 'tradition',
   component: TraditionComponent,
   title: 'いつもの',
