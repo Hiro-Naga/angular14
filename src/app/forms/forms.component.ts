@@ -18,7 +18,7 @@ export class FormsComponent implements OnInit {
 
   sampleForm = new FormGroup({
     name: new FormControl('name'),
-    number: new FormControl(123, Validators.required),
+    num: new FormControl(123, Validators.required),
     required: new FormControl('nonNullable', { nonNullable: true }),
   });
 
@@ -32,7 +32,7 @@ export class FormsComponent implements OnInit {
 
   sampleForm3 = this.fb.nonNullable.group({
     name: ['', Validators.required],
-    number: 0,
+    num: 0,
   });
   
   ngOnInit(): void {
@@ -42,7 +42,7 @@ export class FormsComponent implements OnInit {
     if (this.sampleForm.status !== 'VALID') {
       console.log('error');
     } else {
-      console.log(this.sampleForm.getRawValue().number);
+      console.log(this.sampleForm.getRawValue().num);
       console.log(this.sampleForm.getRawValue().required === null, this.sampleForm.getRawValue().required);
     }
   }
